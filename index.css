@@ -152,7 +152,7 @@ button:hover {
   background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
   .card {
     display: flex;
     flex-direction: column;

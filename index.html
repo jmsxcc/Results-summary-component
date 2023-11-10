@@ -34,52 +34,37 @@
       <div class="card__box2">
         <h3>Summary</h3>
 
-        <div class="item1">
-          <div class="box">
-            <img src="./assets/images/icon-reaction.svg" alt="" />
-            <p>Reaction</p>
-          </div>
-
-          <div class="socre">
-            <p>80<span> / 100</span></p>
-          </div>
-        </div>
-
-        <div class="item2">
-          <div class="box">
-            <img src="./assets/images/icon-memory.svg" alt="" />
-            <p>Memory</p>
-          </div>
-
-          <div class="socre">
-            <p>92<span> / 100</span></p>
-          </div>
-        </div>
-
-        <div class="item3">
-          <div class="box">
-            <img src="./assets/images/icon-verbal.svg" alt="" />
-            <p>Verbal</p>
-          </div>
-
-          <div class="socre">
-            <p>61<span> / 100</span></p>
-          </div>
-        </div>
-
-        <div class="item4">
-          <div class="box">
-            <img src="./assets/images/icon-visual.svg" alt="" />
-            <p>Visual</p>
-          </div>
-
-          <div class="socre">
-            <p>72<span> / 100</span></p>
-          </div>
-        </div>
+        <div id="summary-container"></div>
 
         <button>Continue</button>
       </div>
     </div>
+
+    <script>
+      fetch("./data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          function createValueElement(val) {
+            return `
+              <div class="item ${val.category}">
+                <div class="box">
+                  <img src="${val.icon}" alt="" />
+                  <p>${val.category}</p>
+                </div>
+                <div class="score">
+                  <p>${val.score}<span> / 100</span></p>
+                </div>
+              </div>
+            `;
+          }
+
+          const summaryContainer = document.getElementById("summary-container");
+
+          data.forEach((val) => {
+            summaryContainer.innerHTML += createValueElement(val);
+          });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    </script>
   </body>
 </html>

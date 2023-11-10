@@ -80,10 +80,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.item1,
-.item2,
-.item3,
-.item4 {
+.item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,43 +91,43 @@ h2 {
   padding: 0.3rem;
 }
 
-.item1 {
+.Reaction {
   background-color: hsl(0, 100%, 67%, 0.1);
 }
-.item1 .box p {
+.Reaction .box p {
   color: hsl(0, 100%, 67%);
 }
 
-.item2 {
+.Memory {
   background-color: hsl(39, 100%, 56%, 0.1);
 }
-.item2 .box p {
+.Memory .box p {
   color: hsl(39, 100%, 56%);
 }
 
-.item3 {
+.Verbal {
   background-color: hsl(166, 100%, 37%, 0.1);
 }
-.item3 .box p {
+.Verbal .box p {
   color: hsl(166, 100%, 37%);
 }
 
-.item4 {
+.Visual {
   background-color: hsl(234, 85%, 45%, 0.1);
 }
-.item4 .box p {
+.Visual .box p {
   color: hsl(234, 85%, 45%);
 }
 
 .box,
-.socre {
+.score {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.5rem;
 }
 
-.socre span {
+.score span {
   color: rgb(157, 157, 158);
 }
 .box p {
